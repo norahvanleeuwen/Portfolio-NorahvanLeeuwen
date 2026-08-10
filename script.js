@@ -41,3 +41,13 @@ document.addEventListener('mousemove', (e) => {
   glow.style.left = e.clientX + 'px';
   glow.style.top = e.clientY + 'px';
 });
+
+document.querySelectorAll(
+  '.hero-content, .section-header, .project-card, .about-inner, .contact-inner'
+).forEach((el, i) => {
+  el.classList.add('reveal');
+  el.style.transitionDelay = `${i * 0.05}s`;
+  observer.observe(el);
+  // Fallback: forceer zichtbaarheid als de observer niks doorgeeft
+  setTimeout(() => el.classList.add('visible'), 1500);
+});

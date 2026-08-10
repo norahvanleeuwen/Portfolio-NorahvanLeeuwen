@@ -399,3 +399,14 @@ footer {
     transform: none !important;
   }
 }
+
+@media (max-width: 900px) {
+  nav { padding: 1.25rem 2rem; }
+  #hero, #work, #about, #contact { padding-left: 2rem; padding-right: 2rem; }
+  .projects-grid { grid-template-columns: 1fr; }
+  .projects-grid .project-card:last-child:nth-child(odd) {
+    grid-column: span 1;
+  }
+  .about-inner { grid-template-columns: 1fr; gap: 3rem; }
+  footer { padding: 1.5rem 2rem; flex-direction: column; gap: 0.5rem; }
+}
